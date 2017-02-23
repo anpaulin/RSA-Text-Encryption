@@ -32,14 +32,15 @@ class Bonus
         ulong EPrime = 52741219;
         ulong NPrime = 3125033603;
        
+        string ID = "ID#"
        
        //String to Encrypt
-       string Text = "Hello D.E.A.R. I am student 20509293. This is my little secret: 51839 and 51913. Not so far from New York, Titanic ignored iceberg warnings and blazed onward, struck an iceberg, then sank less than three hours later in the North Atlantic. This marked the death of the Unsinkable ship and the beginning of new safety precautions for sea travel. The Titanic, also known to be the greatest ship made in the history of ships. I LOVE ECE 103, I LOVE ECE 103, I LOVE ECE 103, I LOVE ECE 103, I LOVE ECE 103. WATER WATER WATER --- LOO LOO LOO. Waterloo ROCKS!!!!!...."; 
+       string Text = "Hello D.E.A.R. I am student"+ID+". This is my little secret: 51839 and 51913. Not so far from New York, Titanic ignored iceberg warnings and blazed onward, struck an iceberg, then sank less than three hours later in the North Atlantic. This marked the death of the Unsinkable ship and the beginning of new safety precautions for sea travel. The Titanic, also known to be the greatest ship made in the history of ships. I LOVE ECE 103, I LOVE ECE 103, I LOVE ECE 103, I LOVE ECE 103, I LOVE ECE 103. WATER WATER WATER --- LOO LOO LOO. Waterloo ROCKS!!!!!...."; 
        
        //Split String into 4 Character Chunks
        string[] SplitText = SplitInChunks(Text, 4).ToArray();
        
-       StreamWriter inStream = new StreamWriter("20509293.txt");
+       StreamWriter inStream = new StreamWriter(ID+".txt");
        inStream.Write(String.Format("{0} {1} {2} ", N, E, SplitText.GetLength(0)));
        
        foreach(string s in SplitText)
@@ -48,7 +49,7 @@ class Bonus
             inStream.Flush();
        }
        
-       Console.WriteLine("20509293.txt Has Been Created With Encrypted Text");
+       Console.WriteLine(ID+".txt Has Been Created With Encrypted Text");
        
       
     }
